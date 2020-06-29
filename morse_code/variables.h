@@ -1,19 +1,22 @@
 #ifndef VARIABLES_H
 #define VARIABLES_H
 
-int dit = 25;
-int dah = 3*dit;
+const char* sentences[] = {"word1","someother word","this is also a sentence",
+"blip","bloopedi doop","2b or not 2b","hello world","is this a sentence",
+"test","hallo","sos sos sos sos sos","aabbccdd","new york city","guess what",
+"arduino morse code","amateurfunk","hallo wie geht es dir","moin mir geht es gut"};
 
-int symbol_pause = dit;
-int character_pause = 3*dit;
-int word_pause = 7*dit;
+const int dit = 25;
+const int dah = 3*dit;
 
-int speedmultiplier = 6;
-int array_amount = 10;
+const int symbol_pause = dit;
+const int character_pause = 3*dit;
+const int word_pause = 7*dit;
 
-int outputPin = 13;
-int buttonPin = 0;
+int speedmultiplier = 1;
+const int array_amount = (sizeof(sentences) / 2);
 
-int randomNumber = 0;
+const int outputPin = 13;
+const int buttonPin = 0;
 
 #endif
