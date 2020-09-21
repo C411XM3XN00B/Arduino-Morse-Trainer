@@ -16,4 +16,19 @@ int buttonPin = 0;
 
 int randomNumber = 0;
 
+char myChar;
+
+const PROGMEM char Str0[] = "test";
+const PROGMEM char Str1[] = "hallo";
+const PROGMEM char Str2[] = "sos sos sos sos sos";
+const PROGMEM char Str3[] = "aabbccdd";
+const PROGMEM char Str4[] = "new york city";
+const PROGMEM char Str5[] = "guess what";
+const PROGMEM char Str6[] = "arduino morse code";
+const PROGMEM char Str7[] = "amateurfunk";
+const PROGMEM char Str8[] = "hallo wie geht es dir";
+const PROGMEM char Str9[] = "moin mir geht es gut";
+const PROGMEM char Strdefault[] = "default code";
+
+
 #endif

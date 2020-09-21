@@ -13,51 +13,48 @@ void loop() {
   /*while (digitalRead(buttonPin) == 0) {
   delay(100);  
   }*/
-  Serial.print("random number: ");
+  Serial.print(F("random number: "));
   randomNumber = random(0, (array_amount - 1));
   Serial.println(randomNumber);
-
-  if (randomNumber == 0) {
-    char Str0[] = "test";
-    morseEncoder(Str0, sizeof(Str0));
+  
+  switch(randomNumber) {
+    case 0:
+      morseEncoder(Str0, sizeof(Str0));
+      break;
+    case 1:
+      morseEncoder(Str1, sizeof(Str1));
+      break;
+    case 2:
+      morseEncoder(Str2, sizeof(Str2));
+      break;
+    case 3:
+      morseEncoder(Str3, sizeof(Str3));
+      break;
+    case 4:
+      morseEncoder(Str4, sizeof(Str4));
+      break;
+    case 5:
+      morseEncoder(Str5, sizeof(Str5));
+      break;
+    case 6:
+      morseEncoder(Str6, sizeof(Str6));
+      break;
+    case 7:
+      morseEncoder(Str7, sizeof(Str7));
+      break;
+    case 8:
+      morseEncoder(Str8, sizeof(Str8));
+      break;
+    case 9:
+      morseEncoder(Str9, sizeof(Str9));
+      break;
+    default:
+      Serial.println(F("default case"));
+      morseEncoder(Strdefault, sizeof(Strdefault));
+      Serial.println(F(" end of default case"));
+      break;
   }
-  else if (randomNumber == 1) {
-    char Str1[] = "hallo";
-    morseEncoder(Str1, sizeof(Str1));
-  }
-  else if (randomNumber == 2) {
-    char Str2[] = "sos sos sos sos sos";
-    morseEncoder(Str2, sizeof(Str2));
-  }
-  else if (randomNumber == 3) {
-    char Str3[] = "aabbccdd";
-    morseEncoder(Str3, sizeof(Str3));
-  }
-  else if (randomNumber == 4) {
-    char Str4[] = "new york city";
-    morseEncoder(Str4, sizeof(Str4));
-  }
-  else if (randomNumber == 5) {
-    char Str5[] = "guess what";
-    morseEncoder(Str5, sizeof(Str5));
-  }
-  else if (randomNumber == 6) {
-    char Str6[] = "arduino morse code";
-    morseEncoder(Str6, sizeof(Str6));
-  }
-  else if (randomNumber == 7) {
-    char Str7[] = "amateurfunk";
-    morseEncoder(Str7, sizeof(Str7));
-  }
-  else if (randomNumber == 8) {
-    char Str8[] = "hallo wie geht es dir";
-    morseEncoder(Str8, sizeof(Str8));
-  }
-  else if (randomNumber == 9) {
-    char Str9[] = "moin mir geht es gut";
-    morseEncoder(Str9, sizeof(Str9));
-  }
-  Serial.println("");
-  Serial.println("");
+  Serial.println(F(""));
+  Serial.println(F(""));
   delay(2000);
 }

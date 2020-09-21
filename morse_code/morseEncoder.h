@@ -1,163 +1,169 @@
 #include "ditdah.h"
 
+        const PROGMEM char aStr[] = ".-";
+        const PROGMEM char bStr[] = "-...";
+        const PROGMEM char cStr[] = "-.-.";
+        const PROGMEM char dStr[] = "-..";
+        const PROGMEM char eStr[] = ".";
+        const PROGMEM char fStr[] = "..-.";
+        const PROGMEM char gStr[] = "--.";
+        const PROGMEM char hStr[] = "....";
+        const PROGMEM char iStr[] = "..";
+        const PROGMEM char jStr[] = ".---";
+        const PROGMEM char kStr[] = "-.-";
+        const PROGMEM char lStr[] = ".-..";
+        const PROGMEM char mStr[] = "--";
+        const PROGMEM char nStr[] = "-.";
+        const PROGMEM char oStr[] = "---";
+        const PROGMEM char pStr[] = ".--.";
+        const PROGMEM char qStr[] = "--.-";
+        const PROGMEM char rStr[] = ".-.";
+        const PROGMEM char sStr[] = "...";
+        const PROGMEM char tStr[] = "-";
+        const PROGMEM char uStr[] = "..-";
+        const PROGMEM char vStr[] = "...-";
+        const PROGMEM char wStr[] = ".--";
+        const PROGMEM char xStr[] = "-..-";
+        const PROGMEM char yStr[] = "-.--";
+        const PROGMEM char zStr[] = "--..";
+        const PROGMEM char num0Str[] = "-----";
+        const PROGMEM char num1Str[] = ".----";
+        const PROGMEM char num2Str[] = "..---";
+        const PROGMEM char num3Str[] = "...--";
+        const PROGMEM char num4Str[] = "....-";
+        const PROGMEM char num5Str[] = ".....";
+        const PROGMEM char num6Str[] = "-....";
+        const PROGMEM char num7Str[] = "--...";
+        const PROGMEM char num8Str[] = "---..";
+        const PROGMEM char num9Str[] = "----.";
+
 void morseEncoder(char Str[], int arraysize) {
-  Serial.print("selected sentence: ");
-  Serial.println(Str);
+  Serial.print(F("selected sentence: "));
+  for (byte k = 0; k < strlen_P(Str); k++) {
+    myChar = pgm_read_byte_near(Str + k);
+    Serial.print(myChar);
+  }
+  Serial.println();
   char sym;
-  for (int i = 0; i < arraysize - 1; i++) {
-    sym = Str[i];
+  for (int i = 0; i < strlen_P(Str); i++) {
+    sym = pgm_read_byte_near(Str + i);
     Serial.print(sym);
     //Serial.println(sizeof(Str));
-    if (sym == 'a') {
-      //Serial.println("a ausgewählt");
-      char aStr[] = ".-";
-      ditdah(aStr, sizeof(aStr));
-    }
-    else if (sym == 'b') {
-      char bStr[] = "-...";
-      ditdah(bStr, sizeof(bStr));
-    }
-    else if (sym == 'c') {
-      char cStr[] = "-.-.";
-      ditdah(cStr, sizeof(cStr));
-    }
-    else if (sym == 'd') {
-      char dStr[] = "-..";
-      ditdah(dStr, sizeof(dStr));
-    }
-    else if (sym == 'e') {
-      char eStr[] = ".";
-      ditdah(eStr, sizeof(eStr));
-    }
-    else if (sym == 'f') {
-      char fStr[] = "..-.";
-      ditdah(fStr, sizeof(fStr));
-    }
-    else if (sym == 'g') {
-      char gStr[] = "--.";
-      ditdah(gStr, sizeof(gStr));
-    }
-    else if (sym == 'h') {
-      char hStr[] = "....";
-      ditdah(hStr, sizeof(hStr));
-    }
-    else if (sym == 'i') {
-      char iStr[] = "..";
-      ditdah(iStr, sizeof(iStr));
-    }
-    else if (sym == 'j') {
-      char jStr[] = ".---";
-      ditdah(jStr, sizeof(jStr));
-    }
-    else if (sym == 'k') {
-      char kStr[] = "-.-";
-      ditdah(kStr, sizeof(kStr));
-    }
-    else if (sym == 'l') {
-      char lStr[] = ".-..";
-      ditdah(lStr, sizeof(lStr));
-    }
-    else if (sym == 'm') {
-      char mStr[] = "--";
-      ditdah(mStr, sizeof(mStr));
-    }
-    else if (sym == 'n') {
-      char nStr[] = "-.";
-      ditdah(nStr, sizeof(nStr));
-    }
-    else if (sym == 'o') {
-      char oStr[] = "---";
-      ditdah(oStr, sizeof(oStr));
-    }
-    else if (sym == 'p') {
-      char pStr[] = ".--.";
-      ditdah(pStr, sizeof(pStr));
-    }
-    else if (sym == 'q') {
-      char qStr[] = "--.-";
-      ditdah(qStr, sizeof(qStr));
-    }
-    else if (sym == 'r') {
-      char rStr[] = ".-.";
-      ditdah(rStr, sizeof(rStr));
-    }
-    else if (sym == 's') {
-      //Serial.println("s ausgewählt");
-      char sStr[] = "...";
-      ditdah(sStr, sizeof(sStr));
-    }
-    else if (sym == 't') {
-      char tStr[] = "-";
-      ditdah(tStr, sizeof(tStr));
-    }
-    else if (sym == 'u') {
-      char uStr[] = "..-";
-      ditdah(uStr, sizeof(uStr));
-    }
-    else if (sym == 'v') {
-      char vStr[] = "...-";
-      ditdah(vStr, sizeof(vStr));
-    }
-    else if (sym == 'w') {
-      char wStr[] = ".--";
-      ditdah(wStr, sizeof(wStr));
-    }
-    else if (sym == 'x') {
-      char xStr[] = "-..-";
-      ditdah(xStr, sizeof(xStr));
-    }
-    else if (sym == 'y') {
-      char yStr[] = "-.--";
-      ditdah(yStr, sizeof(yStr));
-    }
-    else if (sym == 'z') {
-      char zStr[] = "--..";
-      ditdah(zStr, sizeof(zStr));
-    }
-    else if (sym == '0') {
-      char num0Str[] = "-----";
-      ditdah(num0Str, sizeof(num0Str));
-    }
-    else if (sym == '1') {
-      char num1Str[] = ".----";
-      ditdah(num1Str, sizeof(num1Str));
-    }
-    else if (sym == '2') {
-      char num2Str[] = "..---";
-      ditdah(num2Str, sizeof(num2Str));
-    }
-    else if (sym == '3') {
-      char num3Str[] = "...--";
-      ditdah(num3Str, sizeof(num3Str));
-    }
-    else if (sym == '4') {
-      char num4Str[] = "....-";
-      ditdah(num4Str, sizeof(num4Str));
-    }
-    else if (sym == '5') {
-      char num5Str[] = ".....";
-      ditdah(num5Str, sizeof(num5Str));
-    }
-    else if (sym == '6') {
-      char num6Str[] = "-....";
-      ditdah(num6Str, sizeof(num6Str));
-    }
-    else if (sym == '7') {
-      char num7Str[] = "--...";
-      ditdah(num7Str, sizeof(num7Str));
-    }
-    else if (sym == '8') {
-      char num8Str[] = "---..";
-      ditdah(num8Str, sizeof(num8Str));
-    }
-    else if (sym == '9') {
-      char num9Str[] = "----.";
-      ditdah(num9Str, sizeof(num9Str));
-    }
-    else if (sym == ' ') {
-      Serial.print(" ");
-      delay((word_pause - character_pause)*speedmultiplier);
-    }
     
+    switch(sym) {
+      case 'a':
+        ditdah(aStr, sizeof(aStr));
+       break;
+      case 'b':
+        ditdah(bStr, sizeof(bStr));
+        break;
+      case 'c':
+        ditdah(cStr, sizeof(cStr));
+        break;
+      case 'd':
+        ditdah(dStr, sizeof(dStr));
+        break;
+      case 'e':
+        ditdah(eStr, sizeof(eStr));
+        break;
+      case 'f':
+        ditdah(fStr, sizeof(fStr));
+        break;
+      case 'g':
+        ditdah(gStr, sizeof(gStr));
+        break;
+      case 'h':
+        ditdah(hStr, sizeof(hStr));
+        break;
+      case 'i':
+        ditdah(iStr, sizeof(iStr));
+        break;
+      case 'j':
+        ditdah(jStr, sizeof(jStr));
+        break;
+      case 'k':
+        ditdah(kStr, sizeof(kStr));
+        break;
+      case 'l':
+        ditdah(lStr, sizeof(lStr));
+        break;
+      case 'm':
+        ditdah(mStr, sizeof(mStr));
+        break;
+      case 'n':
+        ditdah(nStr, sizeof(nStr));
+        break;
+      case 'o':
+        ditdah(oStr, sizeof(oStr));
+        break;
+      case 'p':
+        ditdah(pStr, sizeof(pStr));
+        break;
+      case 'q':
+        ditdah(qStr, sizeof(qStr));
+        break;
+      case 'r':
+        ditdah(rStr, sizeof(rStr));
+        break;
+      case 's':
+        //Serial.println("s ausgewählt");
+        ditdah(sStr, sizeof(sStr));
+        break;
+      case 't':
+        ditdah(tStr, sizeof(tStr));
+        break;
+      case 'u':
+        ditdah(uStr, sizeof(uStr));
+        break;
+      case 'v':
+        ditdah(vStr, sizeof(vStr));
+        break;
+      case 'w':
+        ditdah(wStr, sizeof(wStr));
+        break;
+      case 'x':
+        ditdah(xStr, sizeof(xStr));
+        break;
+      case 'y':
+        ditdah(yStr, sizeof(yStr));
+        break;
+      case 'z':
+        ditdah(zStr, sizeof(zStr));
+        break;
+      case '0':
+        ditdah(num0Str, sizeof(num0Str));
+        break;
+      case '1':
+        ditdah(num1Str, sizeof(num1Str));
+        break;
+      case '2':
+        ditdah(num2Str, sizeof(num2Str));
+        break;
+      case '3':
+        ditdah(num3Str, sizeof(num3Str));
+        break;
+      case '4':
+        ditdah(num4Str, sizeof(num4Str));
+        break;
+      case '5':
+        ditdah(num5Str, sizeof(num5Str));
+        break;
+      case '6':
+        ditdah(num6Str, sizeof(num6Str));
+        break;
+      case '7':
+        ditdah(num7Str, sizeof(num7Str));
+        break;
+      case '8':
+        ditdah(num8Str, sizeof(num8Str));
+        break;
+      case '9':
+        ditdah(num9Str, sizeof(num9Str));
+        break;
+      default:
+        Serial.print(F(" "));
+        delay((word_pause - character_pause)*speedmultiplier);
+        break;
+    }
   }
 }
