@@ -1,24 +1,24 @@
 #include "variables.h"
 
 void serialDebug() {
-  Serial.println("============");
-  Serial.println("Debug OUTPUT");
-  Serial.println("============");
+  Serial.println(F("============"));
+  Serial.println(F("Debug OUTPUT"));
+  Serial.println(F("============"));
   Serial.println("");
-  Serial.print("total sentences: ");
+  Serial.print(F("total sentences: "));
   Serial.println(array_amount);
-  Serial.print("speedmultiplier: ");
+  Serial.print(F("speedmultiplier: "));
   Serial.println(speedmultiplier);
-  Serial.println("timing in ms:");
-  Serial.print("  Dit-length: ");
+  Serial.println(F("timing in ms:"));
+  Serial.print(F("  Dit-length: "));
   Serial.println(dit);
-  Serial.print("  Dah-length: ");
+  Serial.print(F("  Dah-length: "));
   Serial.println(dah);
-  Serial.print("  Symbol-pause: ");
+  Serial.print(F("  Symbol-pause: "));
   Serial.println(symbol_pause);
-  Serial.print("  Character-pause: ");
+  Serial.print(F("  Character-pause: "));
   Serial.println(character_pause);
-  Serial.print("  Word-pause: ");
+  Serial.print(F("  Word-pause: "));
   Serial.println(word_pause);
   Serial.println("");
 }
